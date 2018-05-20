@@ -1,2 +1,2 @@
 # ds
-data science
+Data Science experimentation in Python using numpy, pandas, etc.
