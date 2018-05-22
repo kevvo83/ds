@@ -1,4 +1,4 @@
 import os,sys
 
-if __name__ == 'main':
+if __name__ == '__main__':
     print 'Welcome'
