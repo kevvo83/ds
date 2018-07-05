@@ -59,5 +59,18 @@ class PlayWithPsSeries(unittest.TestCase):
 
         self.assertTrue(result)
 
+    def test_readcsv(self):
+
+        def calcmean(row):
+            row['2000q1'] = np.nanmean([row['2000-01'], row['2000-02'], row['2000-03']])
+            return row
+
+        housing_df = ps.read_csv('City_Zhvi_AllHomes.csv', header=0, index_col=None, na_values='')
+        housing_df['2000q1'] = np.nan
+
+        housing_df = housing_df.apply(calcmean, axis=1)
+        listTobeUsed=[qname for qname in housing_df.columns]
+        housing_df
+
 if __name__ == '__main__':
     unittest.main()
